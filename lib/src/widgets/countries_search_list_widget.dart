@@ -80,7 +80,10 @@ class _CountrySearchListWidgetState extends State<CountrySearchListWidget> {
           ),
         ),
         Flexible(
-          child: ListView.builder(
+          child: ListView.separated(
+            separatorBuilder: (context, index) => Divider(
+              color: Colors.grey.shade100,
+            ),
             controller: widget.scrollController,
             shrinkWrap: true,
             itemCount: filteredCountries.length,
